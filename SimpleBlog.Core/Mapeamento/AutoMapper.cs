@@ -8,7 +8,7 @@ namespace SimpleBlog.Core.Mapeamento
         {
             Mapper.Initialize(x =>
             {
-                x.AddProfile<PostParaPostProjecao>();
+                x.AddProfile<PostParaPostTransferObject>();
             });
         }
     }

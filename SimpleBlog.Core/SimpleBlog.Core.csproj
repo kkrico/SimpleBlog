@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapeamento\AutoMapper.cs" />
-    <Compile Include="Mapeamento\PostParaPostProjecao.cs" />
+    <Compile Include="Mapeamento\PostParaPostTransferObject.cs" />
     <Compile Include="Projecao\CategoriaProjecao.cs" />
     <Compile Include="Projecao\PostDTO.cs" />
     <Compile Include="Projecao\PostProjecao.cs" />

@@ -15,7 +15,7 @@ namespace SimpleBlog.Test.Mappers
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Post, PostProjecao>();
-                cfg.AddProfile<PostParaPostProjecao>();
+                cfg.AddProfile<PostParaPostTransferObject>();
             });
 
             Mapper.AssertConfigurationIsValid();

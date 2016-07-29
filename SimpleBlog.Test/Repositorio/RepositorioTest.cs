@@ -3,6 +3,7 @@ using Moq;
 using SimpleBlog.Data.Infraestrutura;
 using SimpleBlog.Data.Repositorio;
 using SimpleBlog.Dominio.Entidades;
+using SimpleBlog.Test.Fake;
 using SimpleBlog.Test.TestUtil;
 using System;
 using System.Collections.Generic;
@@ -97,13 +98,15 @@ namespace SimpleBlog.Test.Repositorio
         [TestMethod]
         public void AdicionarTest()
         {
-            _mockContext.Setup(m => m.Posts).Returns(_mockSet.Object);
-            _mockSet.Verify(m => m.Add(It.IsAny<Post>()), Times.Once());
-
+            var lista = DadosFalsos.GetPosts().AsQueryable();
+            
+            Util.ConfigurarMock(lista, _mockContext, _mockSet);
+            
             var repo = new Repositorio<Post>(_mockContext.Object);
             repo.Adicionar(new Post() { Descricao = "Post de exemplo" });
             repo.SalvarAlteracoes();
 
+            _mockSet.Verify(m => m.Add(It.IsAny<Post>()), Times.Once());
             _mockContext.Verify(m => m.SaveChanges(), Times.Once());
 
         }

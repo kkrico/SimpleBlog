@@ -4,9 +4,9 @@ using SimpleBlog.Dominio.Entidades;
 
 namespace SimpleBlog.Core.Mapeamento
 {
-    public class PostParaPostProjecao : Profile
+    public class PostParaPostTransferObject : Profile
     {
-        public PostParaPostProjecao()
+        public PostParaPostTransferObject()
         {
             CreateMap<Post, PostProjecao>()
                 .ForMember(p => p.Tags, config => config.Ignore())
