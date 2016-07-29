@@ -6,10 +6,10 @@ namespace SimpleBlog.Core.Projecao
     {
         public PostDTO()
         {
-            Posts = new List<PostProjecao>();
+            Posts = new List<PostTransferObject>();
         }
 
         public int TotalDePosts { get; set; }
-        public ICollection<PostProjecao> Posts { get; set; }
+        public ICollection<PostTransferObject> Posts { get; set; }
     }
 }

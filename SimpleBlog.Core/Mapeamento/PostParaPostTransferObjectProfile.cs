@@ -4,11 +4,11 @@ using SimpleBlog.Dominio.Entidades;
 
 namespace SimpleBlog.Core.Mapeamento
 {
-    public class PostParaPostTransferObject : Profile
+    public class PostParaPostTransferObjectProfile : Profile
     {
-        public PostParaPostTransferObject()
+        public PostParaPostTransferObjectProfile()
         {
-            CreateMap<Post, PostProjecao>()
+            CreateMap<Post, PostTransferObject>()
                 .ForMember(p => p.Tags, config => config.Ignore())
                 .ForMember(p => p.Categoria, config => config.Ignore());
         }

@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SimpleBlog.Data.EntityMapping
 {
-    public class TagMap : EntityTypeConfiguration<Tag>
+    public class TagEntityMap : EntityTypeConfiguration<Tag>
     {
-        public TagMap()
+        public TagEntityMap()
         {
             ToTable("Tag");
 

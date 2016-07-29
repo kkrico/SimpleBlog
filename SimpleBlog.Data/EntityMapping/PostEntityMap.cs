@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SimpleBlog.Data.EntityMapping
 {
-    public class PostMap : EntityTypeConfiguration<Post>
+    public class PostEntityMap : EntityTypeConfiguration<Post>
     {
-        public PostMap()
+        public PostEntityMap()
         {
             ToTable("Post");
 

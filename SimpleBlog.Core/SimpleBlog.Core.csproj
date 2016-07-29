@@ -54,10 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapeamento\AutoMapper.cs" />
-    <Compile Include="Mapeamento\PostParaPostTransferObject.cs" />
+    <Compile Include="Mapeamento\PostParaPostTransferObjectProfile.cs" />
     <Compile Include="Projecao\CategoriaProjecao.cs" />
     <Compile Include="Projecao\PostDTO.cs" />
-    <Compile Include="Projecao\PostProjecao.cs" />
+    <Compile Include="Projecao\PostTransferObject.cs" />
     <Compile Include="Projecao\TagsProjecao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servico\IPostServico.cs" />

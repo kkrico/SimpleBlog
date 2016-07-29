@@ -90,16 +90,9 @@ namespace SimpleBlog.Test.Repositorio
         }
 
         [TestMethod]
-        public void GetPaginadoTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod]
         public void AdicionarTest()
         {
-            var lista = DadosFalsos.GetPosts().AsQueryable();
-            
+            var lista = DadosFake.GetPosts().AsQueryable();
             Util.ConfigurarMock(lista, _mockContext, _mockSet);
             
             var repo = new Repositorio<Post>(_mockContext.Object);
@@ -108,25 +101,21 @@ namespace SimpleBlog.Test.Repositorio
 
             _mockSet.Verify(m => m.Add(It.IsAny<Post>()), Times.Once());
             _mockContext.Verify(m => m.SaveChanges(), Times.Once());
-
         }
 
         [TestMethod]
         public void RemoverTest()
         {
-            Assert.Fail();
-        }
+            var lista = DadosFake.GetPosts().AsQueryable().Take(1);
+            var entidade = lista.First();
+            Util.ConfigurarMock(lista, _mockContext, _mockSet);
 
-        [TestMethod]
-        public void AtualizarTest()
-        {
-            Assert.Fail();
-        }
+            var repo = new Repositorio<Post>(_mockContext.Object);
+            repo.Remover(entidade);
+            repo.SalvarAlteracoes();
 
-        [TestMethod]
-        public void SalvarAlteracoesTest()
-        {
-            Assert.Fail();
+            _mockSet.Verify(m => m.Remove(It.IsAny<Post>()), Times.Once);
+            _mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
     }
 }

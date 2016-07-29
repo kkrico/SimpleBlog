@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SimpleBlog.Data.EntityMapping
 {
-    public class CategoriaMap : EntityTypeConfiguration<Categoria>
+    public class CategoriaEntityMap : EntityTypeConfiguration<Categoria>
     {
-        public CategoriaMap()
+        public CategoriaEntityMap()
         {
             ToTable("Categoria");
 

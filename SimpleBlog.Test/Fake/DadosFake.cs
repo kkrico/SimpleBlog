@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SimpleBlog.Test.Fake
 {
-    public class DadosFalsos
+    public class DadosFake
     {
         public static IEnumerable<Post> GetPosts()
         {

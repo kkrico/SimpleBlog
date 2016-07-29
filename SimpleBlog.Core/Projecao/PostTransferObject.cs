@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace SimpleBlog.Core.Projecao
 {
-    public class PostProjecao
+    public class PostTransferObject
     {
-        public PostProjecao()
+        public PostTransferObject()
         {
             Tags = new List<TagsProjecao>();
         }

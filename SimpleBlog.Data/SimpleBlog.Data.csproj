@@ -50,10 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infraestrutura\SimpleBlogContext.cs" />
-    <Compile Include="EntityMapping\CategoriaMap.cs" />
-    <Compile Include="EntityMapping\PostMap.cs" />
-    <Compile Include="EntityMapping\PostsTagsMap.cs" />
-    <Compile Include="EntityMapping\TagMap.cs" />
+    <Compile Include="EntityMapping\CategoriaEntityMap.cs" />
+    <Compile Include="EntityMapping\PostEntityMap.cs" />
+    <Compile Include="EntityMapping\PostsTagsEntityMap.cs" />
+    <Compile Include="EntityMapping\TagEntityMap.cs" />
     <Compile Include="Migrations\201607192321196_initial.cs" />
     <Compile Include="Migrations\201607192321196_initial.Designer.cs">
       <DependentUpon>201607192321196_initial.cs</DependentUpon>

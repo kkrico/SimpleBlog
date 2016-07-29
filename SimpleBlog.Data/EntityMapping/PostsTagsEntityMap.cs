@@ -3,9 +3,9 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace SimpleBlog.Data.EntityMapping
 {
-    public class PostsTagsMap : EntityTypeConfiguration<PostsTags>
+    public class PostsTagsEntityMap : EntityTypeConfiguration<PostsTags>
     {
-        public PostsTagsMap()
+        public PostsTagsEntityMap()
         {
             ToTable("PostsTags");
             HasKey(p => new { p.PostId, p.TagId });

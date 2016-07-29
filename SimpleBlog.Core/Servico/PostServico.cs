@@ -29,7 +29,7 @@ namespace SimpleBlog.Core.Servico
                 .Take(pageSize)
                 .ToList();
 
-            var postsp = Mapper.Map<ICollection<Post>, ICollection<PostProjecao>>(posts);
+            var postsp = Mapper.Map<ICollection<Post>, ICollection<PostTransferObject>>(posts);
             var resultado = new PostDTO
             {
                 TotalDePosts = posts.Count
