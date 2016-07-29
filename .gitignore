@@ -243,3 +243,10 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Bower e Node
+**/*node_modules
+**/*dist
+**/*.tmp
+**/*.sass-cache
+**/*content
