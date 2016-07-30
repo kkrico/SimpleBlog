@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace SimpleBlog.Core.Projecao
 {
-    public class PostDTO
+    public class PostProjecao
     {
-        public PostDTO()
+        public PostProjecao()
         {
             Posts = new List<PostTransferObject>();
         }

@@ -61,7 +61,8 @@ namespace SimpleBlog.Test.Servico
             var resultado = servico.GetPosts();
 
             Assert.IsNotNull(resultado);
-            Assert.AreEqual(2, resultado.TotalDePosts);
+            Assert.AreEqual(2, resultado.Posts.Count);
+            Assert.AreEqual(6, resultado.TotalDePosts);
         }
     }
 }

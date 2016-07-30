@@ -22,17 +22,20 @@ namespace SimpleBlog.Core.Servico
             return _repositorio.GetTodos().Count();
         }
 
-        public PostDTO GetPosts(int pageNo = 0, int pageSize = 10)
+        public PostProjecao GetPosts(int numeroPagina = 0, int tamanhoPagina = 10)
         {
             var posts = _repositorio.Buscar(p => p.Publicado)
-                .Skip(pageNo * pageSize)
-                .Take(pageSize)
+                .OrderByDescending(p => p.DataPublicacao)
+                .Skip(numeroPagina * tamanhoPagina)
+                .Take(tamanhoPagina)
                 .ToList();
 
-            var postsp = Mapper.Map<ICollection<Post>, ICollection<PostTransferObject>>(posts);
-            var resultado = new PostDTO
+            var postsTransferObject
+                = Mapper.Map<ICollection<Post>, ICollection<PostTransferObject>>(posts);
+            var resultado = new PostProjecao
             {
-                TotalDePosts = posts.Count
+                TotalDePosts = TotalDePosts(),
+                Posts = postsTransferObject
             };
 
             return resultado;
