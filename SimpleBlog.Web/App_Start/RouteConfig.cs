@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace SimpleBlog.Web
@@ -12,6 +8,11 @@ namespace SimpleBlog.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "Posts",
+                url: "posts",
+                defaults: new { controller = "Home", action = "Posts" });
 
             routes.MapRoute(
                 name: "Default",

@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace SimpleBlog.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly IPostServico _servico;
 
@@ -15,9 +15,12 @@ namespace SimpleBlog.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var postsProjecao = _servico.GetPosts(1, 1);
-
             return View("Index");
+        }
+
+        public ActionResult Posts(int pagina = 1)
+        {
+            return PostView("Posts", "PostsPartialView", new { Data = "Data de exemplo" });
         }
     }
 }
