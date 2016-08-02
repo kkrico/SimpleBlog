@@ -5,24 +5,24 @@ namespace SimpleBlog.Web.Controllers
 {
     public class BaseController : Controller
     {
-        protected PostResult PostView()
+        protected PostsResult Posts()
         {
-            return new PostResult(null, null, null);
+            return new PostsResult(null, null, null);
         }
 
-        protected PostResult PostView(string nomeView)
+        protected PostsResult Posts(string nomeView)
         {
-            return new PostResult(nomeView, null, null);
+            return new PostsResult(nomeView, null, null);
         }
 
-        protected PostResult PostView(string nomeView, string nomePartial)
+        protected PostsResult Posts(string nomeView, string nomePartial)
         {
-            return new PostResult(nomeView, nomePartial, null);
+            return new PostsResult(nomeView, nomePartial, null);
         }
 
-        protected PostResult PostView(string nomeView, string nomePartial, object data)
+        protected PostsResult Posts(string nomeView, string nomePartial, object data)
         {
-            return new PostResult(nomeView, nomePartial, data);
+            return new PostsResult(nomeView, nomePartial, data);
         }
     }
 }

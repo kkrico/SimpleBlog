@@ -10,6 +10,6 @@ namespace SimpleBlog.Core.Projecao
         }
 
         public int TotalDePosts { get; set; }
-        public ICollection<PostTransferObject> Posts { get; set; }
+        public IEnumerable<PostTransferObject> Posts { get; set; }
     }
 }

@@ -38,7 +38,7 @@ namespace SimpleBlog.Test.Servico
             Util.ConfigurarMock(data, _mockContext);
 
             var servico = new PostServico(new Repositorio<Post>(_mockContext.Object));
-            var resultado = servico.TotalDePosts();
+            var resultado = servico.TotalPosts();
 
             Assert.AreEqual(6, resultado);
         }
@@ -58,11 +58,10 @@ namespace SimpleBlog.Test.Servico
             Util.ConfigurarMock(data, _mockContext);
 
             var servico = new PostServico(new Repositorio<Post>(_mockContext.Object));
-            var resultado = servico.GetPosts();
+            var resultado = servico.PostsPublicados();
 
             Assert.IsNotNull(resultado);
-            Assert.AreEqual(2, resultado.Posts.Count);
-            Assert.AreEqual(6, resultado.TotalDePosts);
+            Assert.AreEqual(2, resultado.Count());
         }
     }
 }

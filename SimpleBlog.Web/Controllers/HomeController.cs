@@ -20,7 +20,7 @@ namespace SimpleBlog.Web.Controllers
 
         public ActionResult Posts(int pagina = 1)
         {
-            return PostView("Posts", "PostsPartialView", new { Data = "Data de exemplo" });
+            return Posts("Posts", "PostsPartialView", new { Data = "Data de exemplo" });
         }
     }
 }

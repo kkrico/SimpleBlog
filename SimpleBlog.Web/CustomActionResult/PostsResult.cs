@@ -3,9 +3,9 @@ using System.Web.Mvc;
 
 namespace SimpleBlog.Web.CustomActionResult
 {
-    public class PostResult : ViewResultBase
+    public class PostsResult : ViewResultBase
     {
-        public PostResult(string nomeView, string nomePartial, object model)
+        public PostsResult(string nomeView, string nomePartial, object model)
         {
             ViewName = nomeView;    // Prop viewName vem da classe Base. O valor dela o mvc dela faz um lazy load maroto
             PartialViewName = nomePartial;

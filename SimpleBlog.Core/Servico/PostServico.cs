@@ -17,12 +17,12 @@ namespace SimpleBlog.Core.Servico
             _repositorio = repositorio;
         }
 
-        public int TotalDePosts()
+        public int TotalPosts()
         {
             return _repositorio.GetTodos().Count();
         }
 
-        public PostProjecao GetPosts(int numeroPagina = 0, int tamanhoPagina = 10)
+        public IEnumerable<PostTransferObject> PostsPublicados(int numeroPagina = 0, int tamanhoPagina = 10)
         {
             var posts = _repositorio.Buscar(p => p.Publicado)
                 .OrderByDescending(p => p.DataPublicacao)
@@ -30,15 +30,10 @@ namespace SimpleBlog.Core.Servico
                 .Take(tamanhoPagina)
                 .ToList();
 
-            var postsTransferObject
-                = Mapper.Map<ICollection<Post>, ICollection<PostTransferObject>>(posts);
-            var resultado = new PostProjecao
-            {
-                TotalDePosts = TotalDePosts(),
-                Posts = postsTransferObject
-            };
+            var poststransferobjects
+                = Mapper.Map<IEnumerable<Post>, IEnumerable<PostTransferObject>>(posts);
 
-            return resultado;
+            return poststransferobjects;
         }
     }
 }

@@ -4,4 +4,10 @@
 
 <h2>Posts!</h2>
 
-@Html.Partial("PostsPartialView")
+<div id="posts">
+    @Html.Partial("PostsPartialView")
+</div>
+
+@section scripts {
+    <script src="~/Content/simpleblog/js/home/posts.js"></script>
+}

@@ -8,7 +8,7 @@ namespace SimpleBlog.Web
         {
             bundles.Add(new StyleBundle("~/css")
                 .Include("~/Content/bootstrap/dist/css/bootstrap.css")
-                .Include("~/Content/Site.css"));
+                .Include("~/Content/simpleblog/css/Site.css"));
 
             bundles.Add(new ScriptBundle("~/js")
                 .Include("~/Content/jquery/dist/jquery.js")
